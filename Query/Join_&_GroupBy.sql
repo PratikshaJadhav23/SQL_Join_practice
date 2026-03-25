@@ -68,28 +68,25 @@ left join employees as e
 on e.dept_id = d.dept_id
 group by dept_name;
 -- Count employees without department
-select count(name) 
+select count(*) 
 from employees as e
 left join departments as d
 on d.dept_id = e.dept_id
-where d.dept_id is null
-group by e.name;
+where d.dept_id is null;
 
 -- Count employees without projects
-select count(name)
+select count(*)
 from employees as e
 left join projects as p
 on p.emp_id = e.emp_id
-where p.emp_id is null
-group by project_id;
+where p.emp_id is null;
 
 -- Count employees without orders
-select count(name)
+select count(*)
 from employees as e
 left join orders as o
 on e.emp_id = o.emp_id
-where o.emp_id is null
-group by order_id;
+where o.emp_id is null;
 
 -- Total projects per department
 select dept_name , count(project_name)

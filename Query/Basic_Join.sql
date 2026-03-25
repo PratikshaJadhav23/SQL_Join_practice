@@ -1,4 +1,5 @@
 -- -- -- -- -- Basic Join -- -- -- -- 
+use join_part;
 -- Show employee name with department name
 select e.name , d.dept_name 
 from employees as e 
